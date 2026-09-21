@@ -279,6 +279,20 @@ Já para nomes iniciados por `#`, `&` e `(`, optei conscientemente por **não co
 
 ---
 
+## 📥 Dados de entrada
+
+Os arquivos CSV de origem **não estão versionados neste repositório** (são material da capacitação e ultrapassam os limites de tamanho do GitHub). Para reproduzir o pipeline, é necessário disponibilizar os seguintes arquivos em um Volume do Databricks:
+
+| Arquivo | Conteúdo | Volume aprox. |
+|---|---|---:|
+| `movies_info_TMDB_IMDB.csv` | Metadados dos filmes (título, data, duração, idioma, status, sinopse, tagline) | ~107 mil linhas |
+| `movies_financials_IMDB_TMDB.csv` | Orçamento e receita | ~106 mil linhas |
+| `movies_metrics_IMDB_TMDB.csv` | Popularidade, notas e contagem de votos (TMDB e IMDb) | ~107 mil linhas |
+| `credits_and_tags_IMDB_TMDB.csv` | Elenco, direção, roteiro, produtoras e gêneros | ~106 mil linhas |
+| `movies_reviews.csv` | Avaliações de usuários (nota e comentário) | ~32 mil linhas |
+
+A cotação do dólar é obtida em tempo de execução via API do Banco Central (PTAX), não requerendo arquivo.
+
 ## ▶️ Como reproduzir
 
 1. Criar um **Volume** no Databricks e fazer upload dos 5 arquivos CSV
